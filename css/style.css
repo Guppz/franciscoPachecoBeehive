@@ -1,0 +1,80 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+body{
+
+}
+
+#header {
+    font-family: 'Arvo', serif;
+    padding: 20px;
+    text-align: left;
+    background: #202040;
+    color: white;
+    font-size: 20px;
+  }
+  .mainView{
+    display: flex;
+  }
+
+  .section{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 25%;
+    height: 100vh;
+  }
+  #bees{
+    background-color: #202060;
+  }
+  #post{
+    background-color: #602080;
+  }
+  #album{
+    background-color: #b030b0;
+  }
+  #todo{
+    background-color: #202060;
+  }
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .section{
+    width: 33%;
+  }
+  
+  #todo{
+    display: none;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .section{
+    width: 50%;
+  }
+  
+  #todo{
+    display: none;
+  }
+  #album{
+    display: none;
+  }
+
+}
+@media (min-width: 100px) and (max-width: 767px) {
+  .section{
+    width: 100%;
+  }
+  
+  #todo{
+    display: none;
+  }
+  #album{
+    display: none;
+  }
+  #post{
+    display: none;
+  }
+
+}
