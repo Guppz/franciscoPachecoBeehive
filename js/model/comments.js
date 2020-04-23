@@ -1,7 +1,9 @@
 class Comments {
-    constructor(id,email,id,name,postId) {
+    constructor(id,email,name,body,postId) {
         this.id=id;
-        this.title = title;
-        this.userID = userID;
+        this.email = email;
+        this.name = name;
+        this.body = body;
+        this.postId = postId;
     }
 }

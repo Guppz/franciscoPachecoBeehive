@@ -22,8 +22,6 @@ function CardView(user) {
     this.cardUsername = document.createElement('P');
     this.cardUsername.classList.add('card-text');
     
-
-
     this.cardPhone = document.createElement('P');
     this.cardPhone.classList.add('card-text');
 

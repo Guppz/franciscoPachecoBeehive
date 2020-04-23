@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
 *{
   padding: 0%;
   margin: 0%;
+}
+
+html, body {
+  background: #FCEEB5;
+  font-family: Abel, Arial, Verdana, sans-serif;
 }
 ul{
   list-style: none;
@@ -22,6 +28,7 @@ ul{
   }
 
   .section{
+    background-color: #202060;
     color: white;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -39,19 +46,7 @@ ul{
     width: 100%;
   }
 
-  #bees{
-    background-color: #202060;
-  }
-  #post{
-    background-color: #602080;
-  }
-  #album{
-    background-color: #b030b0;
-  }
-  #todo{
-    background-color: #202060;
-  }
-
+ 
 .title{
   margin-bottom: 20%;
 }
@@ -95,7 +90,7 @@ ul{
     display: flex !important;
   }
   
-  #todo{
+  #bees{
     display: none;
   }
   #album{
@@ -105,15 +100,6 @@ ul{
     display: none;
   }
 
-}
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Abel');
-
-html, body {
-  background: #FCEEB5;
-  font-family: Abel, Arial, Verdana, sans-serif;
 }
 
 .center {
@@ -215,6 +201,7 @@ a.button4{
 a.button4:hover{
   border-color: rgba(255,255,255,1);
 }
+
 @media all and (max-width:30em){
  a.button4{
   display:block;
@@ -222,6 +209,147 @@ a.button4:hover{
   }
 }
 
+/* Album seaction */
 
+.album-card{
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.thumbnail{
+  width:80%;
+  display:block;
+  margin:auto;
+  padding-bottom: 10px;
+}
+.card-photo-title{
+  text-align: center;
+  margin-left: 0px;
+}
+
+.card-photo{
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* todos seaction */
+
+.card-todos{
+  margin: auto;
+  width: 90%;
+  height: 10%;
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-title{
+  width: 50%;
+  font-size: 19px;
+}
+
+.todo-complision{
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  padding: 2%;
+  width: 34%;
+  text-align: center;
+}
+
+.false{
+  background-color: red;
+}
+
+a.buttonTodo:hover{
+  border-color: rgb(0, 0, 0);
+}
+
+a.buttonTodo{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin:0px  20px;
+  background-color:white;
+  color: #202040;
+  margin-bottom: 10px;
+}
+
+/* post and comments */
+.card-post{
+  padding-bottom:10px ;
+  border-radius: 5px;
+  width: 90%;
+  background-color: white;
+  display:block;
+  margin:auto;
+  color: black;
+  margin-bottom: 10px;
+}
+.post-title{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.post-body{
+  margin-left: 10px;
+  width: 80%;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.comments-num{
+  font-size: 13px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+
+.card-comments-post{
+  width: 90%;
+  margin-left: 15px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+
+.comment-name{
+  margin-left: 10px;
+  text-align: center;
+}
+
+.comment-body{
+  margin-left: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+.comment-email{
+  margin-top: 10px;
+  margin-right: 10px;
+  text-align: right;
+  font-size: 14px;
+}
+a.buttonComments:hover{
+  border-color: white
+}
+
+a.buttonComments{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin:0px  20px;
+  background-color: #202060;
+  color: white;
+}
 
 

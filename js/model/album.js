@@ -1,4 +1,4 @@
-class Albun {
+class Album {
     constructor(id,title,userID,photos) {
         this.id=id;
         this.title = title;
