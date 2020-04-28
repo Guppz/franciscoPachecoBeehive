@@ -42,12 +42,16 @@ DataManager.prototype.startDownload = function () {
     
         values[5].forEach(post => {
             var commentsArray = [];
-        values[4].forEach(comments => {
-            if(post.id === comments.id){
-                comments = new Comments(comments.id,comments.email,comments.name,comments.body,post.id);
-                commentsArray.push(comments);
-            }
-        });
+
+        if(values[4] != null){
+            values[4].forEach(comments => {
+                if(post.id === comments.id){
+                    comments = new Comments(comments.id,comments.email,comments.name,comments.body,post.id);
+                    commentsArray.push(comments);
+                }
+            });
+
+        }
         posts = new Posts(post.id,post.body,post.title,post.userId,commentsArray);
         this.posts.push(posts);
         });

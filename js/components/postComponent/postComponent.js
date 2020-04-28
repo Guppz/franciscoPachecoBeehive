@@ -1,5 +1,5 @@
-function PostComponent(post) {
-   
+function PostComponent(post , index , newPost) {
+    this.newPost = newPost;
     var container = document.getElementById('post');
 
     this.cardDiv = document.createElement('div');
@@ -27,6 +27,18 @@ function PostComponent(post) {
     this.btnTodo.classList.add('button4','buttonComments');
     this.btnTodo.innerHTML = "New Comment";
 
+
+    this.btnPost = document.createElement('a');
+    this.btnPost.classList.add('button4','buttonPost');
+    this.btnPost.innerHTML = "New Post";
+
+    this.btnPost .addEventListener("click", this.showNewPost.bind(this))
+    
+
+    if(index == 0){
+        container.appendChild(this.btnPost);
+    }
+
     container.appendChild(this.cardDiv);
     this.cardDiv.appendChild(this.posth2);
     this.cardDiv.appendChild(this.postbody);
@@ -35,17 +47,16 @@ function PostComponent(post) {
     post.comments.forEach(element => {
         CommentsComponent(this.cardDiv,element);
     });
-
-
     this.cardDiv.appendChild(this.btnTodo);
-
-
-  
-
-
-
-
 }
+
+PostComponent.prototype.showNewPost = function () {
+    
+    this.newPost.show();
+}
+
+
+
 
 
 
