@@ -1,5 +1,5 @@
-function NewPostComponent() {
-
+function NewPostComponent(appManager) {
+    this.appManager = appManager;
     var container = document.getElementById('post');
     this.cardDiv = document.createElement('div');
     this.cardDiv.classList.add('new','scale-up-center');
@@ -43,14 +43,12 @@ function NewPostComponent() {
     this.btnAccept = document.createElement('a');
     this.btnAccept.classList.add('button4','buttonAccept');
     this.btnAccept.innerHTML = "Accept";
-
+    this.btnAccept.addEventListener("click", this.newPost.bind(this));
 
     this.btnNo = document.createElement('a');
     this.btnNo.classList.add('button4','buttonNo');
     this.btnNo.innerHTML = "Cancel ";
     this.btnNo .addEventListener("click", this.hide.bind(this))
-
-
 
     container.appendChild(this.cardDiv);
     this.cardDiv.appendChild(this.header);
@@ -67,8 +65,26 @@ function NewPostComponent() {
 NewPostComponent.prototype.hide = function () {
     this.cardDiv.hidden = true;
 }
+
 NewPostComponent.prototype.show = function () {
     this.cardDiv.hidden = false;
+}
+
+NewPostComponent.prototype.newPost = function () {
+    var title = this.newTitle.value;
+    var body = this.newBody.value;
+    console.log(title,body);
+    if(title == "" || body == ""){
+        alert("Error blank spaces");
+    }else{
+        this.appManager.uiManager.createNewPost(title,body);
+        var title = this.newTitle.value = "";
+        var body = this.newBody.value = "";
+        this.cardDiv.hidden = true;
+
+    }
+    
+
 }
 
 

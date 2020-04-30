@@ -11,6 +11,7 @@
     <script src="js/manager/appManager.js"></script>
     <script src="js/manager/dataManager.js"></script>
     <script src="js/manager/UIManager.js"></script>
+    <script src="js/manager/relaodManager.js"></script>
     <script src="js/model/user.js"></script>
     <script src="js/model/todos.js"></script>
     <script src="js/model/album.js"></script>
@@ -25,6 +26,8 @@
     <script src="js/components/photoComponent/photoComponent.js"></script>
     <script src="js/components/TodosComponent/todosComponent.js"></script>
     <script src="js/components/newPostComponent/newPostComponent.js"></script>
+    <script src="js/components/newTodoComponent/newTodoComponent.js"></script>
+  
 
 </head>
 <body>
@@ -38,6 +41,10 @@
 
         <div class="section" id="post">
             <h2 class="title">Bee’s Posts</h2>
+            <a class="button4 buttonPost" id="btnNewPost">New Post</a>
+            <div id="posts">
+
+            </div>
         </div>
         
 
@@ -46,6 +53,9 @@
 
         <div  class="section"  id="album">
             <h2 class="title">Bee’s Album</h2>
+            <div id="albums">
+
+            </div>
         </div>
 
 
@@ -53,6 +63,10 @@
 
         <div class="section"id="todo">
             <h2  class="title">Bee’s Todos</h2>
+            <a class="button4 buttonTodo" id="btnNewTodos">New TODOS</a>
+            <div id="todos">
+
+            </div>
             
         </div>
     </div>

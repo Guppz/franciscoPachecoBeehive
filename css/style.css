@@ -21,6 +21,9 @@ label{
   font-size: 20px;
 }
 
+#todos{
+  height: 100%;
+}
 
 #header {
     font-family: 'Arvo', serif;
@@ -424,10 +427,20 @@ a.buttonPost{
   border-radius: 10px;
   margin-bottom: 30px;
 }
-.buttonAccept , .buttonNo{
+.buttonAccept , .buttonNo , .finshed{
   width: 40%;
   display: inline-block !important;
 }
+
+.finshed{
+  margin-bottom: 20px !important;
+}
+
+.clicked{
+  background-color: green !important;
+}
+
+
 
 
 

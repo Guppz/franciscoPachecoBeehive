@@ -1,6 +1,8 @@
-function TodosComponent(todos , index) {
-   
+function TodosComponent(todos , index , newTodo) {
+    this.newTodo = newTodo;
+    this.btnTodo = document.getElementById("btnNewTodos");
     var container = document.getElementById('todo');
+    var todosContainer = document.getElementById('todos');
 
     this.cardDiv = document.createElement('div');
     this.cardDiv.classList.add('card-todos');
@@ -12,30 +14,30 @@ function TodosComponent(todos , index) {
 
     this.todoComplision = document.createElement('p');
 
-    if(todos.completed == false){
+    if(todos.completed === false){
         this.todoComplision.classList.add('todo-complision'); 
         this.todoComplision.classList.add('false');
+        this.todoComplision.innerHTML = "Unfinished";
     }else{
         this.todoComplision.classList.add('todo-complision'); 
+        this.todoComplision.innerHTML = "Finshed";
     }
-    this.todoComplision.innerHTML = todos.completed;
+    
 
 
 
-    this.btnTodo = document.createElement('a');
-    this.btnTodo.classList.add('button4','buttonTodo');
-    this.btnTodo.innerHTML = "New Todos";
-
-    if(index == 0){
-        container.appendChild(this.btnTodo);
-    }
-
-
-    container.appendChild(this.cardDiv);
+    container.appendChild(todosContainer);
+    todosContainer.appendChild(this.cardDiv);
     this.cardDiv.appendChild(this.todoTitle);
     this.cardDiv.appendChild(this.todoComplision);
 
+    this.btnTodo.addEventListener("click", this.showNewTodo.bind(this));
 
     
     
+}
+
+TodosComponent.prototype.showNewTodo = function () {
+    
+    this.newTodo.show();
 }
