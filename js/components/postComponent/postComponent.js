@@ -1,8 +1,11 @@
-function PostComponent(post , index , newPost) {
+function PostComponent(appManager,post , index , newPost , newComment) {
+    this.appManager = appManager;
     this.newPost = newPost;
+    this.newComment = newComment;
     var container = document.getElementById('post');
     var postcontainer = document.getElementById('posts');
     this.cardDiv = document.createElement('div');
+    this.cardDiv.id = post.id;
     this.cardDiv.classList.add('card-post');
     this.posth2 = document.createElement('h2');
     this.posth2.classList.add('post-title');
@@ -18,14 +21,17 @@ function PostComponent(post , index , newPost) {
     this.btnTodo.innerHTML = "New Comment";
     this.btnPost = document.getElementById("btnNewPost");
     this.btnPost.addEventListener("click", this.showNewPost.bind(this));
+    this.btnTodo.addEventListener("click", this.showNewComment.bind(this));
     container.appendChild(postcontainer);
     postcontainer.appendChild(this.cardDiv);
     this.cardDiv.appendChild(this.posth2);
     this.cardDiv.appendChild(this.postbody);
     this.cardDiv.appendChild(this.commentsNum);
+    
     post.comments.forEach(element => {
         CommentsComponent(this.cardDiv,element);
     });
+
     this.cardDiv.appendChild(this.btnTodo);
 }
 
@@ -34,6 +40,12 @@ function PostComponent(post , index , newPost) {
 PostComponent.prototype.showNewPost = function () {
     
     this.newPost.show();
+}
+
+
+PostComponent.prototype.showNewComment = function () {
+    this.appManager.uiManager.beedPostID = this.cardDiv.id;
+    this.newComment.show();
 }
 
 

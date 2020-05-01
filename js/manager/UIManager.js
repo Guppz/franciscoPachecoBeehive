@@ -2,6 +2,7 @@ function UIManager(appManager) {
     this.appManager = appManager;
     this.bees = null;
     this.beesID = 0;
+    this.beedPostID = 0;
 }
 
 UIManager.prototype.showLoader = function () {
@@ -22,10 +23,12 @@ UIManager.prototype.createPostUI = function (user,index) {
     let postcontainer = document.getElementById('posts');
     postcontainer.innerHTML = "";
     this.newPost = new NewPostComponent(this.appManager);
+    this.newComment = new NewCommentComponent(this.appManager,user[index]);
     for(var i = 0; i<user[index].posts.length; i++){
-        this.post = new PostComponent(user[index].posts[i],i,this.newPost);
+        this.post = new PostComponent(this.appManager,user[index].posts[i],i,this.newPost,this.newComment);
     }
     this.newPost.hide();
+    this.newComment.hide();
 };
 
 UIManager.prototype.createAlbumUI = function (user,index) {
@@ -50,7 +53,6 @@ UIManager.prototype.createTodosUI = function (user,index) {
 
 
 UIManager.prototype.createNewPost = function (title , body) {
-    console.log(this.beesID);
     let arrayUser = this.appManager.dataManager.users;
     let postId = arrayUser[this.beesID].posts.length+1;
     let newPost = new Posts(postId,body,title,this.beesID,[]);
@@ -59,7 +61,7 @@ UIManager.prototype.createNewPost = function (title , body) {
     postcontainer.innerHTML = "";
     this.newPost = new NewPostComponent(this.appManager);
     for(var i = 0; i<arrayUser[this.beesID].posts.length; i++){
-        this.post = new PostComponent(arrayUser[this.beesID].posts[i],i,this.newPost);
+        this.post = new PostComponent(this.appManager,arrayUser[this.beesID].posts[i],i,this.newPost);
     }
     this.newPost.hide();
 
@@ -83,6 +85,29 @@ UIManager.prototype.createNewTodos = function (title , finshed) {
     
 
 };
+
+
+UIManager.prototype.createNewComment = function (comment) {
+    let arrayUser = this.appManager.dataManager.users;
+    let postiD = this.beedPostID - 1;
+    comment.id = this.beedPostID + 1;
+    comment.postId = this.beedPostID;
+    this.appManager.dataManager.users[this.beesID].posts[postiD].comments.unshift(comment);
+    let postcontainer = document.getElementById('posts');
+    postcontainer.innerHTML = "";
+    this.newPost = new NewPostComponent(this.appManager);
+    this.newComment = new NewCommentComponent(this.appManager,arrayUser[this.beesID]);
+    for(var i = 0; i<arrayUser[this.beesID].posts.length; i++){
+        this.post = new PostComponent(this.appManager,arrayUser[this.beesID].posts[i],i,this.newPost,this.newComment);
+
+    }
+    this.newPost.hide();
+    this.newComment.hide();
+
+};
+
+
+
 
 
 
