@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animacions.css">
     <script src="js/app.js"></script>
+    <script src="js/manager/state.js"></script>
     <script src="js/manager/appManager.js"></script>
     <script src="js/manager/dataManager.js"></script>
     <script src="js/manager/UIManager.js"></script>
@@ -28,9 +30,8 @@
     <script src="js/components/newPostComponent/newPostComponent.js"></script>
     <script src="js/components/newTodoComponent/newTodoComponent.js"></script>
     <script src="js/components/newCommentComponent/newCommentComponent.js"></script>
-  
-
 </head>
+
 <body>
     <div id="header">
         <h1 id="header-title">The Beehive</h1>
@@ -47,9 +48,6 @@
 
             </div>
         </div>
-        
-
-    
 
 
         <div  class="section"  id="album">
@@ -59,16 +57,11 @@
             </div>
         </div>
 
-
-
-
         <div class="section"id="todo">
             <h2  class="title">Bee’s Todos</h2>
             <a class="button4 buttonTodo" id="btnNewTodos">New TODOS</a>
             <div id="todos">
-
             </div>
-            
         </div>
     </div>
 </body>

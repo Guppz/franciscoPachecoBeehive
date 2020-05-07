@@ -1,8 +1,9 @@
-function UIManager(appManager) {
+function UIManager(appManager,state) {
     this.appManager = appManager;
     this.bees = null;
     this.beesID = 0;
     this.beedPostID = 0;
+    this.state = state;
 }
 
 UIManager.prototype.showLoader = function () {
@@ -14,7 +15,7 @@ UIManager.prototype.createBeesUI = function (user) {
 
     for(var i = 0; i<user.length; i++){
         console.log(user[i]);
-        this.bees = new CardView(user[i],this.appManager);
+        this.bees = new CardView(user[i],this.appManager,this.state);
     }
     
 };
