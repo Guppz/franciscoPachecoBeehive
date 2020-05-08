@@ -64,6 +64,7 @@ label{
     width: 25%;
     height: 100vh;
     overflow: auto;
+    border-radius: 10px;
     
   }
   .card-seaction{
@@ -75,6 +76,7 @@ label{
 
  
 .title{
+  margin-left: 10px;
   margin-bottom: 20%;
 }
 
@@ -164,6 +166,13 @@ label{
   margin-left: 5px;
   margin-bottom: 5px;
 }
+.card-text-album{
+  color: white;
+  margin-top: 5%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
 .card-info ul li{
   display: inline;
   text-align: end;
@@ -293,14 +302,14 @@ a.button4:hover{
 .todo-complision{
   border-radius: 10px;
   color: white;
-  background-color: green;
+  background-color: #3C787E;
   padding: 2%;
   width: 34%;
   text-align: center;
 }
 
 .false{
-  background-color: red;
+  background-color: #750D37;
 }
 
 a.buttonTodo:hover{

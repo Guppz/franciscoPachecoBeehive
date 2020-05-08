@@ -15,7 +15,7 @@ function AlbumComponent(album) {
 
 
     this.albumTitle = document.createElement('h3');
-    this.albumTitle.classList.add('card-text');
+    this.albumTitle.classList.add('card-text-album');
     this.albumTitle.innerHTML = album.title;
 
     container.appendChild(albums);
